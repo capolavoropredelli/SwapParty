@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Party — Poplar Cult 2026 | Clan Sirio TN8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #171614;
+            --coral: #F1584A;
+            --coral-deep: #D8402F;
+            --lime: #CFE94D;
+            --teal: #12969E;
+            --teal-deep: #0C7078;
+            --cream: #FBF7EE;
+            --paper: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            line-height: 1.55;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            line-height: 1.05;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(23, 22, 20, 0.94);
+            backdrop-filter: blur(6px);
+        }
+
+        .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-brand {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color: var(--lime);
+            font-size: 1rem;
+            white-space: nowrap;
+            padding-left: 20px;
+            flex: 0 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0 20px 0 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            flex: 1 1 auto;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cream);
+            font-size: 0.88rem;
+            font-weight: 500;
+            padding: 6px 2px;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: border-color .15s ease, color .15s ease;
+        }
+
+        .nav-links a:hover {
+            border-color: var(--coral);
+            color: var(--lime);
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            background: var(--ink);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+            padding: 64px 0 0;
+        }
+
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 32px;
+            align-items: start;
+            padding-bottom: 52px;
+        }
+
+        .eyebrow-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--lime);
+            color: var(--ink);
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transform: rotate(-3deg);
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 7vw, 4.4rem);
+            color: var(--coral);
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--cream);
+            font-size: 0.4em;
+            letter-spacing: 0.08em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .hero p.lead {
+            margin-top: 20px;
+            max-width: 40ch;
+            font-size: 1.08rem;
+            color: #E9E4D8;
+        }
+
+        .hero-ctas {
+            margin-top: 30px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 26px;
+            border-radius: 14px;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: transform .15s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: var(--ink);
+        }
+
+        .btn-ghost {
+            border-color: var(--cream);
+            color: var(--cream);
+        }
+
+        .star-badge {
+            position: relative;
+            width: 190px;
+            height: 190px;
+            margin: 8px auto 0;
+            background: var(--coral);
+            clip-path: polygon(50% 0%, 61% 32%, 83% 15%, 79% 42%, 100% 45%, 80% 63%, 93% 88%, 67% 76%, 60% 100%, 48% 78%, 25% 95%, 28% 68%, 4% 63%, 22% 43%, 10% 18%, 38% 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .star-badge .txt {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color: var(--ink);
+            font-size: 1.1rem;
+            line-height: 1.15;
+        }
+
+        .wave {
+            display: block;
+            width: 100%;
+            line-height: 0;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        section {
+            padding: 76px 0;
+        }
+
+        .section-teal {
+            background: var(--teal);
+            background-image:
+                repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.06) 0 22px, transparent 22px 90px),
+                repeating-linear-gradient(100deg, rgba(0, 0, 0, 0.05) 0 14px, transparent 14px 90px);
+            color: var(--cream);
+        }
+
+        .kicker {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--coral-deep);
+            margin-bottom: 8px;
+        }
+
+        .section-teal .kicker {
+            color: var(--ink);
+        }
+
+        h2.section-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 34px;
+            max-width: 16ch;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .steps {
+            background: var(--coral);
+            color: var(--ink);
+            border-radius: 22px;
+            padding: 34px 30px;
+            box-shadow: 8px 8px 0 var(--ink);
+        }
+
+        .steps ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .steps li {
+            counter-increment: step;
+            display: flex;
+            gap: 16px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 14px 0;
+            border-top: 2px solid rgba(23, 22, 20, 0.15);
+        }
+
+        .steps li:first-child {
+            border-top: none;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
+            background: var(--ink);
+            color: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .card {
+            background: var(--paper);
+            color: var(--ink);
+            border-radius: 20px;
+            padding: 26px 28px;
+            border: 2px solid var(--ink);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--coral-deep);
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 12px 0 0;
+            padding: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid #E5DFCF;
+        }
+
+        .checklist li:first-child {
+            border-top: none;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            color: var(--teal-deep);
+            font-weight: 700;
+            flex: 0 0 auto;
+        }
+
+        .callout {
+            margin-top: 26px;
+            background: var(--ink);
+            color: var(--lime);
+            border-radius: 18px;
+            padding: 22px 26px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.02rem;
+        }
+
+        .callout span {
+            color: var(--cream);
+            font-weight: 400;
+            display: block;
+            margin-top: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* Partecipare */
+        .participate-box {
+            background: var(--lime);
+            border-radius: 24px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .participate-box h2 {
+            color: var(--ink);
+            font-size: clamp(1.7rem, 4vw, 2.3rem);
+            max-width: 14ch;
+        }
+
+        .participate-box p {
+            margin-top: 14px;
+            max-width: 38ch;
+        }
+
+        .participate-box .btn-primary {
+            background: var(--ink);
+            color: var(--lime);
+        }
+
+        .req-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .req-list li {
+            background: var(--paper);
+            border: 2px solid var(--ink);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-weight: 500;
+        }
+
+        /* Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .info-card {
+            background: var(--paper);
+            color: var(--ink);
+            border: 2px solid var(--ink);
+            border-radius: 20px;
+            padding: 26px;
+        }
+
+        .info-card .label {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            color: var(--coral-deep);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card .big {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .info-card a.maplink {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 700;
+            text-decoration: underline;
+            color: var(--teal-deep);
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-top: 1px solid #E5DFCF;
+            font-weight: 500;
+        }
+
+        .schedule-row:first-child {
+            border-top: none;
+        }
+
+        /* Perché */
+        .why-wrap {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .why-badge {
+            background: var(--coral);
+            color: var(--ink);
+            border-radius: 20px;
+            padding: 30px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            transform: rotate(-2deg);
+        }
+
+        .why-text p {
+            margin: 0 0 16px;
+        }
+
+        .why-text p:last-child {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--teal-deep);
+            margin-bottom: 0;
+        }
+
+        /* Chi siamo */
+        .who-box {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 34px;
+            align-items: center;
+        }
+
+        .who-star {
+            width: 160px;
+            height: 160px;
+            background: var(--lime);
+            clip-path: polygon(50% 0%, 61% 32%, 83% 15%, 79% 42%, 100% 45%, 80% 63%, 93% 88%, 67% 76%, 60% 100%, 48% 78%, 25% 95%, 28% 68%, 4% 63%, 22% 43%, 10% 18%, 38% 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .who-star .txt {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color: var(--ink);
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink);
+            color: #B9B4A6;
+            padding: 44px 0 30px;
+            font-size: 0.9rem;
+        }
+
+        footer .foot-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #37352F;
+            margin-bottom: 20px;
+        }
+
+        footer .foot-brand {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            color: var(--lime);
+            font-size: 1.05rem;
+        }
+
+        footer a {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width:900px) {
+
+            .grid-2,
+            .who-box,
+            .why-wrap,
+            .participate-box,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width:760px) {
+            .wrap {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding-top: 48px;
+            }
+
+            .hero .wrap {
+                grid-template-columns: 1fr;
+                padding-bottom: 36px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.1rem, 10vw, 2.8rem);
+            }
+
+            .hero p.lead {
+                max-width: none;
+            }
+
+            .star-badge {
+                width: 150px;
+                height: 150px;
+                margin: 28px auto 0;
+            }
+
+            .star-badge .txt {
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px 20px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 48px 0;
+            }
+
+            h2.section-title {
+                font-size: clamp(1.55rem, 7vw, 2rem);
+                max-width: none;
+            }
+
+            .steps {
+                padding: 26px 22px;
+                box-shadow: 5px 5px 0 var(--ink);
+            }
+
+            .steps li {
+                font-size: 1.02rem;
+                gap: 12px;
+            }
+
+            .card,
+            .info-card {
+                padding: 22px 20px;
+            }
+
+            .participate-box {
+                padding: 26px 20px;
+                border-radius: 20px;
+            }
+
+            .participate-box p {
+                max-width: none;
+            }
+
+            .why-badge {
+                font-size: 1.15rem;
+                padding: 24px;
+                transform: none;
+            }
+
+            .why-box,
+            .who-box {
+                gap: 24px;
+            }
+
+            .who-star {
+                width: 130px;
+                height: 130px;
+            }
+
+            footer .foot-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width:420px) {
+            body {
+                font-size: 16px;
+            }
+
+            .nav-brand {
+                font-size: 0.9rem;
+                padding-left: 16px;
+            }
+
+            .nav-links {
+                padding-right: 16px;
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+
+            .wrap {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-brand">Swap Party · TN8</div>
+            <ul class="nav-links">
+                <li><a href="#evento">L'evento</a></li>
+                <li><a href="#partecipare">Partecipare</a></li>
+                <li><a href="#informazioni">Informazioni</a></li>
+                <li><a href="#perche">Perché lo facciamo</a></li>
+                <li><a href="#chi-siamo">Chi siamo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="wrap">
+            <div>
+                <div class="eyebrow-badge">12–13 settembre · Poplar Cult</div>
+                <h1>Swap Party<span>Un baratto di vestiti, non uno spreco</span></h1>
+                <p class="lead">Porta i vestiti che non usi più, ricevi punti in cambio e scegli nuovi capi. Un evento
+                    gratuito del Clan Sirio, gruppo scout Trento 8, dentro al festival Poplar Cult.</p>
+                <div class="hero-ctas">
+                    <a class="btn btn-primary"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSe_NOzXQJmLJD3xbn-GiWRZJFtJDPsOVdI8o9uYcUe4qDN9xA/viewform"
+                        target="_blank" rel="noopener">Prenotati ora</a>
+                    <a class="btn btn-ghost" href="#evento">Come funziona</a>
+                </div>
+            </div>
+            <div>
+                <div class="star-badge">
+                    <div class="txt">CLAN<br>SIRIO<br>TN8</div>
+                </div>
+            </div>
+        </div>
+        <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none">
+            <path fill="#12969E" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,90 L0,90 Z"></path>
+        </svg>
+    </header>
+
+    <section id="evento" class="section-teal">
+        <div class="wrap">
+            <div class="kicker">L'evento</div>
+            <h2 class="section-title">Come funziona uno swap party</h2>
+            <div class="grid-2">
+                <div class="steps">
+                    <ol>
+                        <li>Porta i vestiti che non usi più al check-in</li>
+                        <li>Ricevi dei punti in cambio, in base alla qualità del capo</li>
+                        <li>Spendi i punti per prendere nuovi capi</li>
+                    </ol>
+                </div>
+                <div>
+                    <div class="card">
+                        <h3>Che vestiti puoi portare</h3>
+                        <ul class="checklist">
+                            <li>Capi integri, senza strappi o difetti</li>
+                            <li>Puliti, privi di macchie o sporco</li>
+                        </ul>
+                    </div>
+                    <div class="callout">
+                        Serve portare almeno un capo da scambiare<span>Senza vestiti da casa non è possibile prendere
+                            nulla in cambio.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partecipare">
+        <div class="wrap">
+            <div class="kicker">Partecipare</div>
+            <div class="participate-box">
+                <div>
+                    <h2>Ingresso libero e gratuito</h2>
+                    <p>La prenotazione è gradita, gratuita e richiede un minuto. Ci aiuta a organizzare meglio i turni
+                        al check-in.</p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSe_NOzXQJmLJD3xbn-GiWRZJFtJDPsOVdI8o9uYcUe4qDN9xA/viewform"
+                            target="_blank" rel="noopener">Compila il form</a>
+                    </div>
+                </div>
+                <ul class="req-list">
+                    <li>Gratuito, aperto a tutti</li>
+                    <li>Prenotazione consigliata</li>
+                    <li>Porta i vestiti da scambiare</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="informazioni" class="section-teal">
+        <div class="wrap">
+            <div class="kicker">Informazioni</div>
+            <h2 class="section-title">Dove e quando trovarci</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="label">Dove</div>
+                    <div class="big">Piazza di Piedicastello, Trento</div>
+                    <p>Dentro al festival Poplar Cult.</p>
+                    <a class="maplink" href="https://maps.app.goo.gl/LEVVAXYAQ1ySJrX49" target="_blank"
+                        rel="noopener">Vedi su Google Maps →</a>
+                </div>
+                <div class="info-card">
+                    <div class="label">Quando</div>
+                    <div class="schedule-row"><span>Sabato 12 settembre</span><span>14:30–18:00</span></div>
+                    <div class="schedule-row"><span>Domenica 13 settembre</span><span>14:30–18:00</span></div>
+                    <p style="margin-top:14px;">Accesso libero durante tutta la fascia oraria.</p>
+                    <a class="maplink" href="https://poplarfestival.it/it/cult" target="_blank" rel="noopener">Sito del
+                        festival Poplar Cult →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="perche">
+        <div class="wrap">
+            <div class="kicker">Perché lo facciamo</div>
+            <div class="why-wrap">
+                <div class="why-badge">Pensa globalmente, agisci localmente.</div>
+                <div class="why-text">
+                    <p>Ogni anno, come Clan del nostro gruppo scout, scegliamo di approfondire una tematica che ci sta a
+                        cuore: quest'anno ci siamo dedicati al fast fashion e all'impatto che l'industria tessile ha sul
+                        pianeta. Con questo evento vogliamo passare all'azione.</p>
+                    <p>Crediamo che il cambiamento parta da piccoli gesti quotidiani: dare nuova vita agli abiti che non
+                        usiamo più è il nostro modo per combattere gli sprechi, promuovere un consumo più consapevole e
+                        dimostrare che la moda può essere davvero sostenibile.</p>
+                    <p>Non buttare ciò che non usi: portalo con te, scegli un nuovo capo e salva l'ambiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chi-siamo" class="section-teal">
+        <div class="wrap">
+            <div class="kicker">Chi siamo</div>
+            <div class="who-box">
+                <div class="who-star">
+                    <div class="txt">TRENTO<br>8</div>
+                </div>
+                <div>
+                    <h2 class="section-title" style="margin-bottom:14px;">Il gruppo scout del centro città</h2>
+                    <p>Siamo il gruppo scout Trento 8, il gruppo del centro città. Cerchiamo di essere presenti sul
+                        territorio attraverso la partecipazione a eventi e il metterci al servizio della comunità
+                        cittadina.</p>
+                    <p style="margin-top:12px;">Abbiamo colto l'occasione del festival Poplar Cult per realizzare
+                        qualcosa di concreto alla fine del nostro percorso di sensibilizzazione su fast fashion e moda
+                        sostenibile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot-top">
+                <div class="foot-brand">Swap Party · Clan Sirio TN8</div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_NOzXQJmLJD3xbn-GiWRZJFtJDPsOVdI8o9uYcUe4qDN9xA/viewform"
+                    target="_blank" rel="noopener">Prenotati al form →</a>
+            </div>
+            <p>Poplar Cult 2026 · Piazza di Piedicastello, Trento · 12–13 settembre</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
